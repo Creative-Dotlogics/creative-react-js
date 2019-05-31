@@ -8,4 +8,4 @@ class MaterialInput extends React.Component {
     );
   }
 }
-export default Fancy;
+export default MaterialInput;
