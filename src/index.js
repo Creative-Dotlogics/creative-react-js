@@ -1,3 +1,3 @@
 import MaterialInput from './components/MaterialInput';
-
-export {MaterialInput}
+import MaterialNavbar from './components/MaterialNavbar'
+export { MaterialInput, MaterialNavbar }
