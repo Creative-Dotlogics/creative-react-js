@@ -47,6 +47,13 @@ class MaterialNavbar extends Component {
                                         <li><a href="#">dropdown 3</a></li>
               						</ul>
 						        </li>
+                                 {this.props.navbutton.map((btn, index) => {
+                                    return(
+                                        <li className="nav-btn" key={index} >
+                                            <a href={btn.btnUrl} className="btn " style={{background: btn.btnColor}}>{btn.btnName}</a>
+                                        </li>
+                                    )
+                                })}
 	            			</ul>
 	            		</nav>
 						<div 

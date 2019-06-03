@@ -13,6 +13,11 @@ class App extends Component {
             linkName: 'link 3y',
             Url: '#'
         }]
+        const navbutton = [{
+            btnName: 'signup',
+            btnUrl: 'hamza',
+            btnColor: 'red'
+        }]
         const dropdown = [{
             linkName: 'dropdownlink',
             dropdownLinks: [{
@@ -31,7 +36,13 @@ class App extends Component {
         }]
         return (
             <div className="App">
-                <MaterialNavbar position={"fixed"} dropdown={dropdown}  logo={"readme"} navigation={navigation}/>
+                <MaterialNavbar 
+                	position={"fixed"} 
+                	dropdown={dropdown}  
+                	logo={"readme"} 
+                	navigation={navigation} 
+                	navbutton={navbutton}
+                />
             </div>
         )
     }
