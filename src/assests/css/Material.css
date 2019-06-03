@@ -72,6 +72,7 @@ header .content nav.nav-container ul {
 header .content nav.nav-container ul li {
     list-style: none;
     display: inline-block;
+    position: relative;
 }
 
 header .content nav.nav-container ul li a {
@@ -104,8 +105,7 @@ header .content nav.nav-container ul li.dropdown .caret {
 header .content nav.nav-container ul li.dropdown ul.dropdown-menu {
     position: absolute;
     top: 100%;
-    right: -55px;
-    left: auto;
+    left: 0;
     float: left;
     min-width: 160px;
     margin: 2px 0 0;
@@ -160,6 +160,7 @@ header .content nav.nav-container ul li.dropdown ul.dropdown-menu li a {
     -o-transition: none;
     -ms-transition: none;
     transition: none;
+    display: block;
 }
 
 header .toggle-menu {
@@ -190,6 +191,25 @@ header .toggle-menu::before {
 
 header .toggle-menu::after {
     top: -8px;
+}
+
+
+header .nav-btn .btn {
+    appearance: none;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    align-self: flex-start;
+    line-height: 2.5rem;
+    padding: 0 1.5rem;
+    border-radius: 2px;
+    font-weight: 600;
+    box-shadow: 0 3px 9px rgba(0, 0, 0, .12);
+    transform: translate3d(0, 0, 0);
+    transition: box-shadow .2s ease, background-color .2s ease, transform .2s ease;
 }
 
 @media(max-width: 991px) {
