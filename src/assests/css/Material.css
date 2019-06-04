@@ -231,7 +231,56 @@ header .nav-btn .btn {
     border: 1px solid transparent;
     border-radius: .25rem;
     cursor: pointer;
+    margin: .5rem .8rem;
     box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
+}
+
+.btn-neutral {
+    color: #66615b;
+    background-color: #fff;
+    border-color: #fff;
+}
+
+.btn-danger {
+    color: #fff;
+    border-color: #f51c47;
+    background-color: #f51c47;
+}
+
+.btn-success {
+    color: #fff;
+    border-color: #3ecf8e;
+    background-color: #3ecf8e;
+}
+
+.btn-primary {
+    color: #fff;
+    border-color: #6772e5;
+    background-color: #6772e5;
+}
+
+.btn-info {
+    color: #fff;
+    border-color: #82d3f4;
+    background-color: #82d3f4;
+}
+
+.btn:not(:last-child) {
+    margin-right: .5rem;
+}
+
+.btn-sm {
+    font-size: .75rem;
+    line-height: 1.5;
+    padding: .25rem .5rem;
+    border-radius: .25rem;
+}
+
+.btn-lg {
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: .875rem 1rem;
+    border-radius: .3rem;
 }
 
 .__modal {
@@ -261,6 +310,7 @@ header .nav-btn .btn {
     margin: 1.75rem auto;
     position: relative;
     width: auto;
+    justify-content: center;
     pointer-events: none;
     min-height: calc(100% - (1.75rem * 2));
     transition: transform .3s ease-out;
