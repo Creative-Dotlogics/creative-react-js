@@ -206,6 +206,7 @@ header .nav-btn .btn {
     line-height: 2.5rem;
     padding: 0 1.5rem;
     border-radius: 2px;
+    margin: 0;
     font-weight: 600;
     box-shadow: 0 3px 9px rgba(0, 0, 0, .12);
     transform: translate3d(0, 0, 0);
@@ -213,17 +214,20 @@ header .nav-btn .btn {
 }
 
 
+.btn-container {
+    display: inline-block;
+}
+
 .btn {
     font-size: .875rem;
     position: relative;
-    transition: all .15s ease;
     letter-spacing: .025em;
     border-color: #fff;
     background-color: #fff;
     font-weight: 600;
-    line-height: 1.5;
+    line-height: 1.2;
     display: inline-block;
-    padding: .625rem 1.25rem;
+    padding: .625rem 1.5rem;
     outline: none;
     text-align: center;
     vertical-align: middle;
@@ -231,43 +235,59 @@ header .nav-btn .btn {
     border: 1px solid transparent;
     border-radius: .25rem;
     cursor: pointer;
-    margin: .5rem .8rem;
+    margin: .5rem;
+    margin-right:0;
     box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
+    appearance: none;
+    cursor: pointer;
+    outline: none;
+    align-self: flex-start;
+    transform: translate3d(0, 0, 0);
+    transition: box-shadow .2s ease, background-color .2s ease, transform .2s ease;
 }
-
+.btn-outline-neutral:hover,
 .btn-neutral {
     color: #66615b;
     background-color: #fff;
     border-color: #fff;
 }
-
+.btn-outline-default:hover,
+.btn-default {
+    background-color: #66615b;
+    color: #fff;
+    border-color: #66615b;
+}
+.btn-outline-danger:hover,
 .btn-danger {
     color: #fff;
     border-color: #f51c47;
     background-color: #f51c47;
 }
-
+.btn-outline-success:hover,
 .btn-success {
     color: #fff;
     border-color: #3ecf8e;
     background-color: #3ecf8e;
 }
-
+.btn-outline-primary:hover,
 .btn-primary {
     color: #fff;
     border-color: #6772e5;
     background-color: #6772e5;
 }
-
+.btn-outline-info:hover,
 .btn-info {
     color: #fff;
     border-color: #82d3f4;
     background-color: #82d3f4;
 }
-
-.btn:not(:last-child) {
-    margin-right: .5rem;
+.btn-outline-warning:hover,
+.btn-warning {
+    color: #fff;
+    border-color: #fa755a;
+    background-color: #fa755a;
 }
+
 
 .btn-sm {
     font-size: .75rem;
@@ -275,12 +295,54 @@ header .nav-btn .btn {
     padding: .25rem .5rem;
     border-radius: .25rem;
 }
-
 .btn-lg {
-    font-size: 1rem;
+    font-size: 1.15rem;
     line-height: 1.5;
-    padding: .875rem 1rem;
+    padding: .65rem 1.7rem;
     border-radius: .3rem;
+}
+
+.btn-outline-primary {
+    color: #6772e5;
+    border-color: #6772e5;
+    background-color: transparent;
+    background-image: none;
+}
+
+.btn-outline-warning {
+    color: #fa755a;
+    border-color: #fa755a;
+    background-color: transparent;
+    background-image: none;
+}
+.btn-outline-info {
+    background-color: #fff;
+    border-color: #82d3f4;
+    color: #82d3f4;
+    background-image: none;
+}
+.btn-outline-default{
+    border-color: #66615b;
+    background-color: #fff;
+    color: #66615b;
+    background-image: none;
+}
+
+.btn-outline-danger {
+    background-color: #fff;
+    border-color: #f51c47;
+    color: #f51c47;
+    background-image: none;
+}
+
+.btn-outline-success {
+    background-color: #fff;
+    border-color: #3ecf8e;
+    color: #3ecf8e;
+    background-image: none;
+}
+.rounded{
+    border-radius: 35px !important;
 }
 
 .__modal {
@@ -301,12 +363,13 @@ header .nav-btn .btn {
     padding: 0 15px;
     display: block;
     transition: opacity .15s linear;
+    background-color: rgba(0,0,0,.4);
 }
 
 .__modal .modal {
     display: flex;
     align-items: center;
-    max-width: 500px;
+    max-width: 450px;
     margin: 1.75rem auto;
     position: relative;
     width: auto;
@@ -314,14 +377,17 @@ header .nav-btn .btn {
     pointer-events: none;
     min-height: calc(100% - (1.75rem * 2));
     transition: transform .3s ease-out;
+    transform: translate(0, -25%);
+
+}
+.__modal.open .modal{
     transform: translate(0, 0);
 }
-
 .__modal .modal .content {
     position: relative;
     display: flex;
-    flex-direction: column;
     width: 100%;
+    flex-direction: column;
     pointer-events: auto;
     outline: 0;
     background-color: #fff;
@@ -329,6 +395,7 @@ header .nav-btn .btn {
     border: 0;
     border-radius: .3rem;
     box-shadow: 0 15px 35px rgba(50, 50, 93, .2), 0 5px 15px rgba(0, 0, 0, .17);
+    animation: modal-show .3s;
 }
 
 
@@ -350,8 +417,9 @@ header .nav-btn .btn {
     font-weight: 400;
     color: #32325d;
     margin-top: 0;
-    font-size: 1rem;
+    font-size: 1.3rem;
 }
+
 
 .__modal .modal .content .modal__header button.close {
     padding: 0;
@@ -391,6 +459,7 @@ header .nav-btn .btn {
     flex: 1 1 auto;
 }
 
+
 .__modal .modal .content .modal__body p {
     font-size: 1rem;
     font-weight: 300;
@@ -401,26 +470,67 @@ header .nav-btn .btn {
 
 .__modal .modal .content .modal__footer {
     display: flex;
-    padding: 1.5rem;
+    padding: 0.5rem 1.5rem ;
     border-top: 1px solid #e9ecef;
     align-items: center;
     justify-content: flex-end;
 }
 
 .__modal .modal .content .modal__footer button.close {
-    margin-left: auto !important;
-    background: #fe4c50;
+    margin-right:  auto !important;
     color: #ffffff;
 }
 
+.__modal .modal .content.notification{
+    background: linear-gradient(87deg, #f51c47 0, #f54b1c 100%) !important;
+}
+.__modal .modal .content.notification .modal__header, 
+.__modal .modal .content.notification .modal__footer {
+    border-color: rgba(255, 255, 255, .075);
+}
+
+.__modal .modal .content.notification .modal__header .modal__title{
+    color: #fff !important;
+}
+
+.__modal .modal .content.notification .modal__header button.close span{
+    color: #fff !important;
+}
+.__modal .modal .content.image .modal__body,
+.__modal .modal .content.error .modal__body,
+.__modal .modal .content.notification .modal__body{
+    padding: 3.5rem 1.5rem 1rem;
+    text-align:center;
+}
+.__modal .modal .content.notification .modal__body .heading {
+    font-size: .95rem;
+    font-weight: 400;
+    letter-spacing: .025em;
+    margin-top: 1.5rem !important;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.__modal .modal .content.notification .modal__body p{
+    color: #fff;
+}
 
 
-
-
-
-
-
-
+.__modal .modal .content.error .modal__body .heading {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: .025em;
+    margin-top: 1.5rem !important;
+    text-transform: capitalize;
+    color: #595959;
+}
+.__modal .modal .content.error .modal__body p{
+    color: #696969;
+}
+.__modal .modal .content.image .modal__footer ,
+.__modal .modal .content.error .modal__footer {
+    justify-content: center;
+}
 
 @media(max-width: 991px) {
     header {
@@ -524,4 +634,27 @@ header .nav-btn .btn {
         z-index: 99999;
     }
 
+}
+
+
+@keyframes modal-show {
+    0% {
+        -webkit-transform: scale(.7);
+        transform: scale(.7);
+    }
+
+    45% {
+        -webkit-transform: scale(1.05);
+        transform: scale(1.05);
+    }
+
+    80% {
+        -webkit-transform: scale(.95);
+        transform: scale(.95);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
 }
